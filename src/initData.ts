@@ -5,9 +5,9 @@ export async function initializeCountries() {
   const countryRepository = AppDataSource.getRepository(Country);
 
   const countries = [
-    { code: "FR", name: "France", emoji: "🇫🇷" },
-    { code: "BE", name: "Belgique", emoji: "🇧🇪" },
-    { code: "AN", name: "Andorre", emoji: "🇦🇩" },
+    { code: "FR", name: "France", emoji: "🇫🇷", continentCode: "EU" },
+    { code: "BE", name: "Belgique", emoji: "🇧🇪", continentCode: "EU" },
+    { code: "AN", name: "Andorre", emoji: "🇦🇩", continentCode: "EU" },
   ];
 
   for (const country of countries) {

@@ -33,6 +33,32 @@ Crée ensuite 2 queries :
 
 Une qui renvoie la liste de tous les pays (avec pour attributs, pour chaque pays, le code, le nom, l'emoji)
 Une autre qui prend en paramètre le code du pays et qui renvoie le pays en question
+
+`query AllCountries {
+  getCountries {
+    code
+    emoji
+    name
+  }
+}`
+
+`query CountryByCode(code: "FR") {
+  getCountryByCode(code: $code) {
+    code
+    name
+    emoji
+  }
+}`
+
 Et pour finir,
 
 Ajoute un code continent à la mutation d'ajout de pays et une query qui permet de récupérer tous les pays d'un continent
+
+`query GetCountriesByContinent {
+  getCountriesByContinent(continentCode: "EU") {
+    code
+    continentCode
+    emoji
+    name
+  }
+}`

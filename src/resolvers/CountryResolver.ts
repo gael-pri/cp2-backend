@@ -17,9 +17,18 @@ export class CountryResolver {
   async addCountry(
     @Arg("code") code: string,
     @Arg("name") name: string,
-    @Arg("emoji") emoji: string
+    @Arg("emoji") emoji: string,
+    @Arg("continentCode") continentCode: string
   ): Promise<Country> {
-    const newCountry = this.countryRepository.create({ code, name, emoji });
+    const newCountry = this.countryRepository.create({ code, name, emoji, continentCode });
     return await this.countryRepository.save(newCountry);
+  }
+
+  // Obtenir tous les pays d'un continent
+  @Query(() => [Country])
+  async getCountriesByContinent(
+    @Arg("continentCode") continentCode: string
+  ): Promise<Country[]> {
+    return await this.countryRepository.find({ where: { continentCode } });
   }
 }
