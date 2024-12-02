@@ -1,17 +1,16 @@
 {
   "compilerOptions": {
-    "module": "ESNext",
-    "target": "ES2020",
+    "rootDirs": ["src"],
+    "outDir": "dist",
+    "target": "ES2021",
+    "module": "CommonJS",
     "moduleResolution": "node",
     "esModuleInterop": true,
-    "skipLibCheck": true,
     "experimentalDecorators": true,
     "emitDecoratorMetadata": true,
+    "forceConsistentCasingInFileNames": true,
     "strict": true,
-    "outDir": "./dist",
-    "rootDirs": ["src"],
-    "types": ["node"],
-    "resolveJsonModule": true
+    "skipLibCheck": true,
   },
   "include": ["src/**/*"],
   "exclude": ["node_modules"]
